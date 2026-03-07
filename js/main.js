@@ -30,7 +30,17 @@
 
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
+      var isOpen = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+      });
     });
   }
 
@@ -136,10 +146,4 @@
     startAuto();
   }
 
-  /* ── Contact Form Submit ── */
-  window.handleSubmit = function () {
-    alert(
-      'Thank you for your enquiry! N.S. Rathor will personally review and respond within 24 hours.\n\nFor urgent matters, call or WhatsApp: +91-9826702652'
-    );
-  };
 })();
