@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.rathorns.com/sitemap.xml
+
+# N.S. Rathor Consulting — Mineral Beneficiation & Pelletization
+# Bhilai, Chhattisgarh, India
