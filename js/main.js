@@ -54,14 +54,15 @@
   }
 
   /* ── Active Nav Highlight ── */
-  var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  var path = window.location.pathname.replace(/\/+$/, '');
+  var currentPage = path.split('/').pop() || 'index.html';
   var pageMap = {
-    'index.html': 'home',
-    'about.html': 'about',
-    'services.html': 'services',
-    'projects.html': 'projects',
-    'founder.html': 'founder',
-    'contact.html': 'contact'
+    'index.html': 'home', '': 'home', 'index': 'home',
+    'about.html': 'about', 'about': 'about',
+    'services.html': 'services', 'services': 'services',
+    'projects.html': 'projects', 'projects': 'projects',
+    'founder.html': 'founder', 'founder': 'founder',
+    'contact.html': 'contact', 'contact': 'contact'
   };
   var activePage = pageMap[currentPage] || 'home';
 
